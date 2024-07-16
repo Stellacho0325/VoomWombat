@@ -1,0 +1,265 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  padding-top: 70px;
+}
+
+.header {
+  position: fixed;
+  width: 100%;  /* Ensures the header spans the full width of the viewport */
+  top: 0;       /* Aligns the header at the top of the viewport */
+  left: 0;      /* Aligns the header at the left edge of the viewport */
+  z-index: 1000; /* Ensures the head*/
+  background-color: rgb(255, 238, 160);
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+  margin-left: 20px; 
+}
+.logo a {
+  padding-left: 20px; 
+}
+.navbar .container-fluid .navbar-collapse form.d-flex {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 150%;
+  height: 100%;
+  gap: 8px;
+}
+
+.navbar .container-fluid .navbar-collapse form.d-flex .form-control {
+  flex-grow: 1;
+  margin-right: 8px;
+}
+
+.navbar .container-fluid .navbar-collapse form.d-flex .btn {
+  white-space: nowrap;
+}
+
+.category-bar {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  background-color: #f1f1f1;
+}
+
+.category-bar a {
+  color: black;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 15px;
+  font-size: 14px;
+}
+
+.category-bar a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  align-items: start;
+}
+
+.item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+}
+
+.item-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.item-details {
+  padding: 15px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.item-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.item-info {
+  font-size: 16px;
+  color: #666;
+}
+
+.item-availability {
+  font-size: 14px;
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.rent-button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.rent-button:hover {
+  background-color: #ccd368;
+}
+.item-specs {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.item-specs li {
+  padding: 2px 0; /* Small padding for better readability */
+}
+
+.item-specs li strong {
+  font-weight: normal; /* Keeps font weight uniform, uses bold for emphasis */
+  color: #333; /* Darker color for the label */
+}
+
+/* Styling for no results */
+.no-results {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+  padding: 20px;
+}
+/* Style for the search box container */
+.search-container {
+  position: relative;
+  width: 300px; /* Adjust width as needed to match the search bar */
+}
+
+#recentSearches {
+  display: none; /* Initially hidden */
+  position: absolute;
+  top: 100%; /* Push it 100% from the top of the container, right below the search bar */
+  left: 0; /* Align it with the left side of the container */
+  width: 100%; /* Make the dropdown as wide as the container */
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds depth */
+  z-index: 1000; /* Make sure it appears on top of other content */
+}
+
+#recentSearches div {
+  padding: 10px; /* Padding for each item */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-bottom: 1px solid #eee; /* Separates items visually */
+}
+
+#recentSearches div:hover {
+  background-color: #f9f9f9; /* Light grey background on hover */
+}
+/* Sidebar styling */
+.sidebar {
+  background-color: #fadc57;
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  left: -250px;  /* Start off-screen */
+  top: 0;
+  overflow: auto;
+  transition: left 0.3s;
+  z-index: 1000;  /* Make sure it's on top of other content */
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background-color: #ddd;
+}
+
+#sidebarToggle {
+  cursor: pointer;
+  padding: 10px 15px;
+  background: #04AA6D;
+  color: white;
+  border: none;
+}
+
+.categories h3 {
+  padding-left: 16px;
+  color: #333;
+}
+
+.categories a {
+  padding-left: 16px;
+  display: block;
+  color: darkblue;
+  text-decoration: none;
+}
+
+.categories a:hover {
+  text-decoration: underline;
+}
+
+/* Button to toggle the sidebar */
+.toggle-button {
+  position: fixed;
+  left: 300px; /* Adjust this value based on the width of your logo */
+  top: 90; /* Keep the vertical position or adjust as necessary */
+  z-index: 1100;
+  background-color: #f8f9fa;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 600px) {
+  .toggle-button {
+      top: 90px; /* Adjust for smaller screens */
+  }
+}
+
+.rent-button {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  padding: 8px 16px; /* Some padding */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer/hand icon */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Text size */
+}
+
+.rent-button i {
+  margin-right: 5px; /* Space between icon and text */
+}

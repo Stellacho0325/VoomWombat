@@ -1,0 +1,104 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+.header {
+    background: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+    width: 150px;
+}
+
+.search-container {
+    position: relative;
+}
+
+input[type="search"] {
+    padding: 8px;
+    margin-right: 5px;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.main-content {
+    width: 80%;
+    max-width: 1000px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.order-section, .customer-details {
+    margin-top: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+.order-details, .total-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.order-details > div, .total-price {
+    margin: 10px 0;
+}
+
+.car-detail img {
+    width: 80px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.price, .total-price {
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #ffc107;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #e0a800;
+}
+
+button#submit-button.disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+
+button#submit-button.enabled {
+    background-color: #e0a800;
+    cursor: pointer;
+}
